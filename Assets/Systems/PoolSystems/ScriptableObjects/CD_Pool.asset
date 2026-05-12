@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: CD_Pool
   m_EditorClassIdentifier: Assembly-CSharp::PoolSystems.Scripts.Data.Config.CD_Pool
   PoolObject:
-  - PoolID: Bullet
+  - PoolID: BulletNormal
     Prefab: {fileID: 9081965118033461834, guid: a02323cf47fd45140b10b1ac13bb878a, type: 3}
     InitialSize: 20
+    Expandable: 1
+  - PoolID: WeaponPistol
+    Prefab: {fileID: 337460799669284172, guid: b001c16d071e4e44c97b9f648e26961d, type: 3}
+    InitialSize: 1
     Expandable: 1
