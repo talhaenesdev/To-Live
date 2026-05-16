@@ -7,18 +7,18 @@ public class PlayerInventory : MonoBehaviour
 {
     [SerializeField] private WeaponType _hasWeapon; // Get CD_PlayerData
     [SerializeField] private Transform _hand;
-    private PoolManager _poolManager;
+    [SerializeField] private PoolManager _poolManager;
 
     private void Awake()
     {
-        _poolManager = PoolManager.Instance;
+
     }
 
     void Start()
     {
         Gun gun =
             _poolManager.Get<Gun>("Weapon" + _hasWeapon.ToString());
-
+        gun.SetPosition(_hand.position);
         gun.SetParent(_hand);
     }   
 }

@@ -19,5 +19,10 @@ namespace ShootingSystem.Scripts.Entities
         {
             transform.SetParent(parentObjectTransform);
         }
+
+        internal void SetPosition(Vector3 position)
+        {
+            transform.position = position;
+        }
     }
 }

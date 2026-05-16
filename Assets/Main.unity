@@ -207,6 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfeff4675d3e6ac4bbbcc673b82a941e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIAim
+  _poolManager: {fileID: 1794733800}
   cam: {fileID: 964881541}
   firePoint: {fileID: 203398123}
 --- !u!1 &63791914
@@ -234,7 +235,7 @@ Transform:
   m_GameObject: {fileID: 63791914}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.739, y: 0, z: 0.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -367,7 +368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2815cc767a34f704186e3dd1f64198b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveSpeed: 5
+  _playerData: {fileID: 11400000, guid: 4d5eac0242068fc4b92528130032439c, type: 2}
 --- !u!114 &203398125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,6 +383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
   _hasWeapon: 0
   _hand: {fileID: 63791915}
+  _poolManager: {fileID: 1794733800}
 --- !u!1 &219911984
 GameObject:
   m_ObjectHideFlags: 0
@@ -1214,64 +1216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2815cc767a34f704186e3dd1f64198b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveSpeed: 5
---- !u!1001 &1876225877253945361
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 337460799669284172, guid: b001c16d071e4e44c97b9f648e26961d, type: 3}
-      propertyPath: m_Name
-      value: Pistol
-      objectReference: {fileID: 0}
-    - target: {fileID: 7367299987919292904, guid: b001c16d071e4e44c97b9f648e26961d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7367299987919292904, guid: b001c16d071e4e44c97b9f648e26961d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7367299987919292904, guid: b001c16d071e4e44c97b9f648e26961d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7367299987919292904, guid: b001c16d071e4e44c97b9f648e26961d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7367299987919292904, guid: b001c16d071e4e44c97b9f648e26961d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7367299987919292904, guid: b001c16d071e4e44c97b9f648e26961d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7367299987919292904, guid: b001c16d071e4e44c97b9f648e26961d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7367299987919292904, guid: b001c16d071e4e44c97b9f648e26961d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7367299987919292904, guid: b001c16d071e4e44c97b9f648e26961d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7367299987919292904, guid: b001c16d071e4e44c97b9f648e26961d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b001c16d071e4e44c97b9f648e26961d, type: 3}
+  _playerData: {fileID: 11400000, guid: 4d5eac0242068fc4b92528130032439c, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1282,7 +1227,6 @@ SceneRoots:
   - {fileID: 1794733801}
   - {fileID: 203398123}
   - {fileID: 563300984}
-  - {fileID: 1876225877253945361}
   - {fileID: 2001142566}
   - {fileID: 538069354}
   - {fileID: 1856370626}

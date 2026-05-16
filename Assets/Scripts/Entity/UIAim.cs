@@ -6,13 +6,13 @@ using WeaponSystem.Scripts.Enums;
 
 public class UIAim : MonoBehaviour, IPointerClickHandler
 {
-    private PoolManager _poolManager;
+    [SerializeField] private PoolManager _poolManager;
     public Camera cam;
     public Transform firePoint;
 
     private void Awake()
     {
-        _poolManager = PoolManager.Instance;
+
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -40,8 +40,10 @@ public class UIAim : MonoBehaviour, IPointerClickHandler
         Bullet bullet =
             _poolManager.Get<Bullet>("Bullet"+BulletType.Normal.ToString());
 
+        GunBarrel gunBarrel = FindAnyObjectByType<GunBarrel>();
+
         bullet.transform.position =
-            firePoint.position;
+            gunBarrel.SpawnPoint.position;
 
         bullet.Init(target);
     }
