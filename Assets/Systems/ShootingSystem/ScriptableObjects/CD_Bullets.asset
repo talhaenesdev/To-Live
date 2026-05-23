@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WeaponSystem.Scripts.Data.Config.CD_Bullets
   Bullets:
   - WeaponBulletType: 0
-    Speed: 20
+    Speed: 50
     MagazineCapacity: 10
     Damage: 50
   - WeaponBulletType: 1

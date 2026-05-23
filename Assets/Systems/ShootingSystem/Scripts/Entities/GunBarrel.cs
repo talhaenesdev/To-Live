@@ -8,5 +8,4 @@ namespace ShootingSystem.Scripts.Entities
 
         internal Transform SpawnPoint => _spawnPoint;
     }
-
 }
