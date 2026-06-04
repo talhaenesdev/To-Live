@@ -1,16 +1,20 @@
-﻿using System;
+﻿using EnemySystem.Scripts.Entities;
+using System;
 using UnityEngine;
 
 namespace ShootingSystem.Scripts.Entities
 {
     internal class Collider : MonoBehaviour
     {
-        public Action ObjectTrigger;
+        public Action<GameObject> ObjectTrigger;
         private void OnTriggerEnter(UnityEngine.Collider other)
         {
             if (other.CompareTag("CanTrigger"))
             {
-                ObjectTrigger?.Invoke();
+                if (other.GetComponentInParent<IDamageable>() is IDamageable damageable)
+                    ObjectTrigger?.Invoke(other.GetComponentInParent<Enemy>().gameObject);
+                else
+                    ObjectTrigger?.Invoke(this.gameObject);
             }
         }
     }

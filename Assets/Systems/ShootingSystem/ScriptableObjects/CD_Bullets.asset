@@ -17,7 +17,9 @@ MonoBehaviour:
     Speed: 50
     MagazineCapacity: 10
     Damage: 50
+    MaxDistance: 200
   - WeaponBulletType: 1
     Speed: 30
     MagazineCapacity: 5
     Damage: 40
+    MaxDistance: 50

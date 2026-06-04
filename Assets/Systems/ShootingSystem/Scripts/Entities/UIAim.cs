@@ -53,9 +53,8 @@ namespace ShootingSystem.Scripts.Entities
                 gunBarrel.SpawnPoint.position;
 
             bullet.ReturnToPool += ReturnBulletToPool;
-            bullet.Init(target);
+            bullet.Init(target, _bulletData.Bullets[(int)BulletType.Normal].Speed, _bulletData.Bullets[(int)BulletType.Normal].MaxDistance, _bulletData.Bullets[(int)BulletType.Normal].Damage);
             bullet.OnSpawn();
-            bullet.SetSpeed(_bulletData.Bullets[(int)BulletType.Normal].Speed);
 
 
             _bullets.Add(bullet);

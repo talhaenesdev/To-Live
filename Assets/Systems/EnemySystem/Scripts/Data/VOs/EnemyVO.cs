@@ -8,7 +8,7 @@ namespace EnemySystem.Scripts.Data.VOs
     {
         public EnemyType EnemyType;
         public string Name;
-        public int Health;
+        public float StartHealth;
         public Vector3 StartPosition;
     }
 }

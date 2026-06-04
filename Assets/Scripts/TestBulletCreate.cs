@@ -40,6 +40,6 @@ public class TestBulletCreate : MonoBehaviour
         Bullet bullet = PoolManager.Instance.Get<Bullet>("Bullet");
 
         bullet.transform.position = _firePoint.position;
-        bullet.Init(targetPoint);
+        bullet.Init(targetPoint,0,0,0);
     }
 }

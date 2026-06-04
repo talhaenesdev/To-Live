@@ -1,16 +1,23 @@
 ﻿using PoolSystems.Scripts;
+using ShootingSystem.Scripts.Entities;
+using System;
 using TMPro;
 using UnityEngine;
 
 namespace EnemySystem.Scripts.Entities
 {
-    internal class Enemy : MonoBehaviour, IPoolable
+    internal class Enemy : MonoBehaviour, IPoolable, IDamageable
     {
         [SerializeField] private TMP_Text _name;
         [SerializeField] private TMP_Text _health;
+        [SerializeField] private MeshRenderer _glassMeshRenderer;
+        [SerializeField] private Material _crackGlass;
 
-        private int _healthValue;
+        public Action<int> ReturnToPool;
+        public Action<int,float> TakeDamage;
 
+        private float _healthValue;
+        private int _setId;
 
         public void OnDespawn()
         {
@@ -36,11 +43,24 @@ namespace EnemySystem.Scripts.Entities
             _name.text = name;
         }
 
-        internal void SetHealth(int health)
+        internal void SetHealthText(float health)
         {
-
             _healthValue = health;
             SetHealthText(_healthValue.ToString());
+        }
+        internal void SetId(int id)
+        {
+            _setId = id;
+        }
+
+        internal void CreateEnemy()
+        {
+            gameObject.SetActive(true);
+        }
+
+        internal void KillEnemy()
+        {
+            gameObject.SetActive(false);
         }
 
         private void SetHealthText(string health)
@@ -52,5 +72,14 @@ namespace EnemySystem.Scripts.Entities
             _health.text = _healthValue.ToString();
         }
 
+        internal void DamageModel()
+        {
+            _glassMeshRenderer.material = _crackGlass;
+        }
+
+        void IDamageable.TakeDamage(float damage)
+        {
+            TakeDamage?.Invoke(_setId, damage);
+        }
     }
 }

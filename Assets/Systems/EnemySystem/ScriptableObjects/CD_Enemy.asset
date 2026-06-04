@@ -13,19 +13,42 @@ MonoBehaviour:
   m_Name: CD_Enemy
   m_EditorClassIdentifier: Assembly-CSharp::EnemySystem.Scripts.Data.Config.CD_Enemy
   EnemyData:
-  - EnemyType: 1
-    Name: Rumeysa
-    Health: 100
-    StartPosition: {x: 7.3, y: 0, z: 23.3}
-  - EnemyType: 1
-    Name: Rumeysa
-    Health: 100
-    StartPosition: {x: -6.5, y: 0, z: 23.3}
-  - EnemyType: 1
-    Name: Rumeysa
-    Health: 100
-    StartPosition: {x: 7.3, y: 5.6, z: 46.6}
-  - EnemyType: 1
-    Name: Rumeysa
-    Health: 100
-    StartPosition: {x: -5.7, y: 3.1, z: 46.6}
+    keys: 0000000001000000020000000300000004000000050000000600000007000000
+    values:
+    - EnemyType: 1
+      Name: Mahmut
+      StartHealth: 100
+      StartPosition: {x: 7.3, y: 0, z: 23.3}
+    - EnemyType: 1
+      Name: Mahmut
+      StartHealth: 100
+      StartPosition: {x: 7.3, y: 5.6, z: 46.6}
+    - EnemyType: 1
+      Name: Mahmut
+      StartHealth: 100
+      StartPosition: {x: 7.3, y: 5.6, z: 46.6}
+    - EnemyType: 1
+      Name: Mahmut
+      StartHealth: 100
+      StartPosition: {x: -5.7, y: 3.1, z: 46.6}
+    - EnemyType: 1
+      Name: Mahmut
+      StartHealth: 100
+      StartPosition: {x: -5.7, y: 3.1, z: 66.6}
+    - EnemyType: 1
+      Name: Mahmut
+      StartHealth: 100
+      StartPosition: {x: -5.7, y: 3.1, z: 76.6}
+    - EnemyType: 1
+      Name: Mahmut
+      StartHealth: 100
+      StartPosition: {x: -5.7, y: 3.1, z: 86.6}
+    - EnemyType: 1
+      Name: Mahmut
+      StartHealth: 100
+      StartPosition: {x: -5.7, y: 3.1, z: 96.6}
+  _enemyId: 7
+  _enemyType: 1
+  _name: Mahmut
+  _startHealth: 100
+  _startPosition: {x: -5.7, y: 3.1, z: 26.6}

@@ -9,6 +9,7 @@ namespace WeaponSystem.Scripts.Data.VOs
         public float Speed;
         public int MagazineCapacity;
         public float Damage;
+        public float MaxDistance;
     }
 
 }
