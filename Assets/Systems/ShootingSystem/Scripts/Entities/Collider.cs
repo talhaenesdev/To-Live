@@ -12,7 +12,7 @@ namespace ShootingSystem.Scripts.Entities
             if (other.CompareTag("CanTrigger"))
             {
                 if (other.GetComponentInParent<IDamageable>() is IDamageable damageable)
-                    ObjectTrigger?.Invoke(other.GetComponentInParent<Enemy>().gameObject);
+                    ObjectTrigger?.Invoke(other.GetComponentInParent<Obstacle>().gameObject);
                 else
                     ObjectTrigger?.Invoke(this.gameObject);
             }

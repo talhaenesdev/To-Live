@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace EnemySystem.Scripts.Entities
 {
-    internal class Enemy : MonoBehaviour, IPoolable, IDamageable
+    internal class Obstacle : MonoBehaviour, IPoolable, IDamageable
     {
         [SerializeField] private TMP_Text _name;
         [SerializeField] private TMP_Text _health;

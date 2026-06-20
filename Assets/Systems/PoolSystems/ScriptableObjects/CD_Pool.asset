@@ -29,3 +29,7 @@ MonoBehaviour:
     Prefab: {fileID: 8772218489974900743, guid: 061c5690c8fb4454082d1aa2242a2c1b, type: 3}
     InitialSize: 1
     Expandable: 1
+  - PoolID: MainObstacle
+    Prefab: {fileID: 5656823319680194876, guid: b5f40c73fe6bc5c459da02692ecdd3c3, type: 3}
+    InitialSize: 10
+    Expandable: 1

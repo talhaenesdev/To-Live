@@ -7,7 +7,7 @@ using WeaponSystem.Scripts.Data.Config;
 
 namespace EnemySystem.Scripts.Entities
 {
-    public class EnemyManager : MonoBehaviour
+    public class ObstacleManager : MonoBehaviour
     {
         #region EnemySystem
         [SerializeField] private CD_Enemy _enemyData;
@@ -23,7 +23,7 @@ namespace EnemySystem.Scripts.Entities
         #endregion
 
         #region EnemyMap
-        private SerializableDictionary<int,Enemy> _enemies = new SerializableDictionary<int, Enemy>();
+        private SerializableDictionary<int,Obstacle> _enemies = new SerializableDictionary<int, Obstacle>();
         #endregion
 
         private void Start()
@@ -33,7 +33,7 @@ namespace EnemySystem.Scripts.Entities
 
             for (int i = 0; i < enemyCount; i++)
             {
-                var enemy = _poolManager.Get<Enemy>("MainEnemy");
+                var enemy = _poolManager.Get<Obstacle>("MainEnemy");
 
                 enemy.SetName(_enemyData.EnemyData[i].Name);
                 enemy.SetHealthText(_enemyData.EnemyData[i].StartHealth);
