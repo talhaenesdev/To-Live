@@ -5,12 +5,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using WeaponSystem.Scripts.Data.Config;
 using WeaponSystem.Scripts.Enums;
+using Zenject;
 
 namespace ShootingSystem.Scripts.Entities
 {
     public class UIAim : MonoBehaviour, IPointerClickHandler
     {
-        [SerializeField] private PoolManager _poolManager;
+        [Inject] private PoolManager _poolManager;
         [SerializeField] private Camera cam;
         [SerializeField] private Transform firePoint;
         [SerializeField] private CD_Bullets _bulletData;

@@ -4,10 +4,11 @@ using EnemySystem.Scripts.Data.VOs;
 using PoolSystems.Scripts;
 using UnityEngine;
 using WeaponSystem.Scripts.Data.Config;
+using Zenject;
 
 namespace EnemySystem.Scripts.Entities
 {
-    public class ObstacleManager : MonoBehaviour
+    public class EnemyManager : MonoBehaviour
     {
         #region EnemySystem
         [SerializeField] private CD_Enemy _enemyData;
@@ -19,7 +20,7 @@ namespace EnemySystem.Scripts.Entities
         #endregion
 
         #region PoolSystem
-        [SerializeField] private PoolManager _poolManager;
+        [Inject] private PoolManager _poolManager;
         #endregion
 
         #region EnemyMap
