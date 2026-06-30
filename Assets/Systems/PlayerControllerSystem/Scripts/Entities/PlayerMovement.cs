@@ -1,12 +1,12 @@
-using PlayerControllerSystem.Scripts.Data.Config;
+using Assets.Systems.PlayerControllerSystem.Scripts.Entities;
 using UnityEngine;
+using Zenject;
 
 namespace PlayerControllerSystem.Scripts.Entities
 {
     public class PlayerMovement : MonoBehaviour
     {
-        [Header("Config Data")]
-        [SerializeField] private CD_Player _playerData;
+        [Inject] private IPlayerConfig _playerData;
 
         private void Update()
         {

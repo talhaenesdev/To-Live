@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a3fa2067634d1d41b3d2463d4bba576, type: 3}
   m_Name: CD_Pool
   m_EditorClassIdentifier: Assembly-CSharp::PoolSystems.Scripts.Data.Config.CD_Pool
-  PoolObject:
+  _poolObject:
   - PoolID: BulletNormal
     Prefab: {fileID: 9081965118033461834, guid: a02323cf47fd45140b10b1ac13bb878a, type: 3}
-    InitialSize: 20
+    InitialSize: 1
     Expandable: 1
   - PoolID: WeaponPistol
     Prefab: {fileID: 337460799669284172, guid: b001c16d071e4e44c97b9f648e26961d, type: 3}
@@ -31,5 +31,5 @@ MonoBehaviour:
     Expandable: 1
   - PoolID: MainObstacle
     Prefab: {fileID: 5656823319680194876, guid: b5f40c73fe6bc5c459da02692ecdd3c3, type: 3}
-    InitialSize: 10
+    InitialSize: 1
     Expandable: 1

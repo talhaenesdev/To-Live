@@ -1,9 +1,8 @@
 using PoolSystems.Scripts;
-using System;
+using ShootingSystem.Scripts.Core;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using WeaponSystem.Scripts.Data.Config;
 using WeaponSystem.Scripts.Enums;
 using Zenject;
 
@@ -11,17 +10,14 @@ namespace ShootingSystem.Scripts.Entities
 {
     public class UIAim : MonoBehaviour, IPointerClickHandler
     {
-        [Inject] private PoolManager _poolManager;
+        [Inject] private IPoolManager _poolManager;
+        [Inject] private IBulletsData _bulletData;
+
         [SerializeField] private Camera cam;
         [SerializeField] private Transform firePoint;
-        [SerializeField] private CD_Bullets _bulletData;
 
         [SerializeField] private List<Bullet> _bullets = new List<Bullet>();
 
-        private void Awake()
-        {
-
-        }
 
         public void OnPointerClick(PointerEventData eventData)
         {

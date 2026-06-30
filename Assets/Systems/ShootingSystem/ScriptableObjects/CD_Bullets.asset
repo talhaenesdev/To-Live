@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027a79537a94b7c4496c13dc0f757731, type: 3}
   m_Name: CD_Bullets
   m_EditorClassIdentifier: Assembly-CSharp::WeaponSystem.Scripts.Data.Config.CD_Bullets
-  Bullets:
+  _bullets:
   - WeaponBulletType: 0
-    Speed: 50
+    Speed: 20
     MagazineCapacity: 10
-    Damage: 50
-    MaxDistance: 200
+    Damage: 5
+    MaxDistance: 100
   - WeaponBulletType: 1
-    Speed: 30
-    MagazineCapacity: 5
-    Damage: 40
-    MaxDistance: 50
+    Speed: 5
+    MagazineCapacity: 1
+    Damage: 50
+    MaxDistance: 20

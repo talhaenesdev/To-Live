@@ -1,24 +1,21 @@
-using PoolSystems.Scripts.Data.Config;
+using Assets.Systems.PoolSystems.Scripts;
 using PoolSystems.Scripts.Data.VOs;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 namespace PoolSystems.Scripts
 {
-    internal class PoolManager : MonoBehaviour
+    internal class PoolManager : MonoBehaviour, IPoolManager
     {
-        public static PoolManager Instance;
-
-        [SerializeField]
-        private CD_Pool database;
+        [Inject]
+        private IPoolConfig database;
 
         private Dictionary<string, Pool> pools =
             new();
 
         private void Awake()
         {
-            Instance = this;
-
             Initialize();
         }
 

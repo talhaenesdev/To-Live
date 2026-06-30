@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2e5550b382d824cb058822b809983f, type: 3}
   m_Name: CD_Player
   m_EditorClassIdentifier: Assembly-CSharp::PlayerControllerSystem.Scripts.Data.Config.CD_Player
-  PlayerData:
-    Name: Talha
+  _playerData:
+    Name: Rumeysa
     Health: 100
-    Speed: 0
+    Speed: 1

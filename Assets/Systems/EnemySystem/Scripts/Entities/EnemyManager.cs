@@ -1,7 +1,7 @@
-using EnemySystem.Scripts.Data.Config;
-using EnemySystem.Scripts.Data.RunTime;
+using EnemySystem.Scripts.Core.Interfaces;
 using EnemySystem.Scripts.Data.VOs;
 using PoolSystems.Scripts;
+using ShootingSystem.Scripts.Core;
 using UnityEngine;
 using WeaponSystem.Scripts.Data.Config;
 using Zenject;
@@ -11,16 +11,16 @@ namespace EnemySystem.Scripts.Entities
     public class EnemyManager : MonoBehaviour
     {
         #region EnemySystem
-        [SerializeField] private CD_Enemy _enemyData;
-        [SerializeField] private RD_Enemy _enemyRunTimeData;
+        [Inject] private IEnemyConfig _enemyData;
+        [Inject] private IEnemyRuntime _enemyRunTimeData;
         #endregion
 
         #region ShootingSystem
-        [SerializeField] private CD_Bullets _bulletData;
+        [Inject] private IBulletsData _bulletData;
         #endregion
 
         #region PoolSystem
-        [Inject] private PoolManager _poolManager;
+        [Inject] private IPoolManager _poolManager;
         #endregion
 
         #region EnemyMap

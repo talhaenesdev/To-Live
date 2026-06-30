@@ -8,7 +8,7 @@ public class PlayerInventory : MonoBehaviour
 {
     [SerializeField] private WeaponType _hasWeapon; // Get CD_PlayerData
     [SerializeField] private Transform _hand;
-    [Inject] private PoolManager _poolManager;
+    [Inject] private IPoolManager _poolManager;
 
     private void Awake()
     {

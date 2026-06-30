@@ -2,11 +2,14 @@ using PoolSystems.Scripts;
 using ShootingSystem.Scripts.Entities;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Zenject;
 
 public class TestBulletCreate : MonoBehaviour
 {
     [SerializeField] private Camera _cam;
     [SerializeField] private Transform _firePoint;
+
+    [Inject] private IPoolManager _poolManager;
 
     void Start()
     {
@@ -37,7 +40,7 @@ public class TestBulletCreate : MonoBehaviour
 
     void Shoot(Vector3 targetPoint)
     {
-        Bullet bullet = PoolManager.Instance.Get<Bullet>("Bullet");
+        Bullet bullet = _poolManager.Get<Bullet>("Bullet");
 
         bullet.transform.position = _firePoint.position;
         bullet.Init(targetPoint,0,0,0);

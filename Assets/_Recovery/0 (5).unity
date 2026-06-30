@@ -209,6 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIAim
   cam: {fileID: 964881541}
   firePoint: {fileID: 203398123}
+  _bulletData: {fileID: 11400000, guid: 13217aa36ff28e54b88c4dfd8770dab0, type: 2}
   _bullets: []
 --- !u!1 &63791914
 GameObject:
@@ -1079,11 +1080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c60d6d3f7a74b34484d41b2d1532426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameInstaller.Scripts.Manager.GameInstaller
-  _playerData: {fileID: 11400000, guid: 4d5eac0242068fc4b92528130032439c, type: 2}
-  _poolData: {fileID: 11400000, guid: 3cc9a33aec5d83546a113270b8eb33cf, type: 2}
-  _enemyData: {fileID: 11400000, guid: 288d29f962decaf4f8f9fbc891bb8bd8, type: 2}
-  _enemyRunTimeData: {fileID: 11400000, guid: 2391d666eefc39841a6591db8f80ba81, type: 2}
-  _bulletData: {fileID: 11400000, guid: 13217aa36ff28e54b88c4dfd8770dab0, type: 2}
+  _cD_Player: {fileID: 0}
 --- !u!4 &851635294
 Transform:
   m_ObjectHideFlags: 0
@@ -1438,6 +1435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3a467a769c758d49ae6a964a58f453b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PoolSystems.Scripts.PoolManager
+  database: {fileID: 11400000, guid: 3cc9a33aec5d83546a113270b8eb33cf, type: 2}
 --- !u!4 &1794733801
 Transform:
   m_ObjectHideFlags: 0
@@ -1725,6 +1723,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2c929d50a8c29e4c8e7dd4d13efb774, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySystem.Scripts.Entities.EnemyManager
+  _enemyData: {fileID: 11400000, guid: 288d29f962decaf4f8f9fbc891bb8bd8, type: 2}
+  _enemyRunTimeData: {fileID: 11400000, guid: 2391d666eefc39841a6591db8f80ba81, type: 2}
+  _bulletData: {fileID: 11400000, guid: 13217aa36ff28e54b88c4dfd8770dab0, type: 2}
 --- !u!1 &2101273154
 GameObject:
   m_ObjectHideFlags: 0
