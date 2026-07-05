@@ -15,7 +15,7 @@ MonoBehaviour:
   _poolObject:
   - PoolID: BulletNormal
     Prefab: {fileID: 9081965118033461834, guid: a02323cf47fd45140b10b1ac13bb878a, type: 3}
-    InitialSize: 1
+    InitialSize: 20
     Expandable: 1
   - PoolID: WeaponPistol
     Prefab: {fileID: 337460799669284172, guid: b001c16d071e4e44c97b9f648e26961d, type: 3}
@@ -23,7 +23,7 @@ MonoBehaviour:
     Expandable: 1
   - PoolID: MainEnemy
     Prefab: {fileID: 1454143825904023752, guid: 377c1c8b7cc7c41419984da9bfb2d07b, type: 3}
-    InitialSize: 1
+    InitialSize: 10
     Expandable: 1
   - PoolID: BulletImpact
     Prefab: {fileID: 8772218489974900743, guid: 061c5690c8fb4454082d1aa2242a2c1b, type: 3}
@@ -32,4 +32,8 @@ MonoBehaviour:
   - PoolID: MainObstacle
     Prefab: {fileID: 5656823319680194876, guid: b5f40c73fe6bc5c459da02692ecdd3c3, type: 3}
     InitialSize: 1
+    Expandable: 1
+  - PoolID: Way1
+    Prefab: {fileID: 7246940425558287212, guid: 87d7abcb17fcb3e498ded3eea1f5573f, type: 3}
+    InitialSize: 2
     Expandable: 1

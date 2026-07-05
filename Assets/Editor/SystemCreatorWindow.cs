@@ -38,6 +38,8 @@ public class SystemCreatorWindow : EditorWindow
         Directory.CreateDirectory($"{rootPath}/ScriptableObjects");
 
         Directory.CreateDirectory($"{rootPath}/Scripts");
+        Directory.CreateDirectory($"{rootPath}/Scripts/Core");
+        CreateTxt($"{rootPath}/Scripts/Core/Core.txt", "Core");
         Directory.CreateDirectory($"{rootPath}/Scripts/Data");
         Directory.CreateDirectory($"{rootPath}/Scripts/Data/Config");
         CreateTxt($"{rootPath}/Scripts/Data/Config/Config.txt", "Config");

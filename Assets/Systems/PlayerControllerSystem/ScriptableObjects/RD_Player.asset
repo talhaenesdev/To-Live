@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a2e5550b382d824cb058822b809983f, type: 3}
-  m_Name: CD_Player
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerControllerSystem.Scripts.Data.Config.CD_Player
-  _playerData:
-    Name: Rumeysa
-    Health: 100
-    Speed: 20
+  m_Script: {fileID: 11500000, guid: 0df264a3784610142a792fa3da461010, type: 3}
+  m_Name: RD_Player
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerControllerSystem.Scripts.Data.Config.RD_Player
+  _playerRunTimeData:
+    Vector3: {x: 0, y: -1.2, z: 93.95221}

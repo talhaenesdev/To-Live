@@ -1,9 +1,7 @@
 using EnemySystem.Scripts.Core.Interfaces;
 using EnemySystem.Scripts.Data.VOs;
 using PoolSystems.Scripts;
-using ShootingSystem.Scripts.Core;
 using UnityEngine;
-using WeaponSystem.Scripts.Data.Config;
 using Zenject;
 
 namespace EnemySystem.Scripts.Entities
@@ -13,10 +11,6 @@ namespace EnemySystem.Scripts.Entities
         #region EnemySystem
         [Inject] private IEnemyConfig _enemyData;
         [Inject] private IEnemyRuntime _enemyRunTimeData;
-        #endregion
-
-        #region ShootingSystem
-        [Inject] private IBulletsData _bulletData;
         #endregion
 
         #region PoolSystem
