@@ -77,6 +77,11 @@ namespace EnemySystem.Scripts.Entities
             _glassMeshRenderer.material = _crackGlass;
         }
 
+        internal void ResetModel()
+        {
+            _glassMeshRenderer.material = null;
+        }
+
         void IDamageable.TakeDamage(float damage)
         {
             TakeDamage?.Invoke(_id, damage);

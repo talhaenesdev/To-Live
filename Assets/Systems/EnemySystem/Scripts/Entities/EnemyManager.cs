@@ -10,7 +10,7 @@ namespace EnemySystem.Scripts.Entities
     public class EnemyManager : MonoBehaviour
     {
         #region EnemySystem
-        [Inject] private IEnemyConfig _enemyData;
+        [Inject] private IEnemyConfig _enemyConfigData;
         [Inject] private IEnemyRuntime _enemyRunTimeData;
         #endregion
 
@@ -21,16 +21,22 @@ namespace EnemySystem.Scripts.Entities
         [Inject] private IPlayerRunTime _playerRunTimeData;
 
         #region EnemyMap
-        private SerializableDictionary<int,Obstacle> _enemies = new SerializableDictionary<int, Obstacle>();
+        [SerializeField] private SerializableDictionary<int,Obstacle> _enemies = new SerializableDictionary<int, Obstacle>();
         #endregion
 
+        int _enemiesCount = 0;
         private float _timer;
+
+        private void Start()
+        {
+            _enemyRunTimeData.EnemyRunTimeData.Clear();
+        }
 
         private void Update()
         {
             _timer += Time.deltaTime;
 
-            if (_timer >= _enemyData.SpawnTime)
+            if (_timer >= _enemyConfigData.SpawnTime)
             {
                 _timer = 0f;
                 SpawnEnemy();
@@ -39,38 +45,32 @@ namespace EnemySystem.Scripts.Entities
 
         private void SpawnEnemy()
         {
-            var enemyCount = _enemyData.EnemyData.Count;
-            _enemyRunTimeData.EnemyRunTimeData.Clear();
+            var enemy = _poolManager.Get<Obstacle>("MainEnemy");
 
-            for (int i = 0; i < enemyCount; i++)
+            enemy.SetName(_enemyConfigData.EnemyData[0].Name);
+            enemy.SetHealthText(_enemyConfigData.EnemyData[0].StartHealth);
+            enemy.SetPosition(GetRandomPosition());
+            enemy.CreateEnemy();
+            enemy.SetId(_enemiesCount);
+            enemy.ReturnToPool += ReturnEnemyToPool;
+            enemy.TakeDamage += TakeDamage;
+
+            EnemyRVO enemyRVO = new EnemyRVO()
             {
-                var enemy = _poolManager.Get<Obstacle>("MainEnemy");
+                Health = _enemyConfigData.EnemyData[0].StartHealth,
+            };
 
-                enemy.SetName(_enemyData.EnemyData[0].Name);
-                enemy.SetHealthText(_enemyData.EnemyData[0].StartHealth);
-
-                enemy.SetPosition(GetRandomPosition());
-                enemy.SetId(i);
-                enemy.CreateEnemy();
-                enemy.ReturnToPool += ReturnEnemyToPool;
-                enemy.TakeDamage += TakeDamage;
-
-                EnemyRVO enemyRVO = new EnemyRVO()
-                {
-                    Health = _enemyData.EnemyData[0].StartHealth,
-                };
-
-                _enemyRunTimeData.EnemyRunTimeData.Add(i, enemyRVO);
-                _enemies.Add(i, enemy);
-            }
+            _enemies.Add(_enemiesCount, enemy);
+            _enemyRunTimeData.EnemyRunTimeData.Add(_enemiesCount, enemyRVO);
+            _enemiesCount++;
         }
 
         private Vector3 GetRandomPosition()
         {
             return new Vector3(
-                Random.Range(_playerRunTimeData.PlayerRunTimeData.Vector3.x + _enemyData.MinSpawnPosition.x, _playerRunTimeData.PlayerRunTimeData.Vector3.x + _enemyData.MaxSpawnPosition.x),
-                Random.Range(_playerRunTimeData.PlayerRunTimeData.Vector3.y + _enemyData.MinSpawnPosition.y, _playerRunTimeData.PlayerRunTimeData.Vector3.y + _enemyData.MaxSpawnPosition.y),
-                Random.Range(_playerRunTimeData.PlayerRunTimeData.Vector3.z + _enemyData.MinSpawnPosition.z, _playerRunTimeData.PlayerRunTimeData.Vector3.z + _enemyData.MaxSpawnPosition.z));
+                Random.Range(_playerRunTimeData.PlayerRunTimeData.Vector3.x + _enemyConfigData.MinSpawnPosition.x, _playerRunTimeData.PlayerRunTimeData.Vector3.x + _enemyConfigData.MaxSpawnPosition.x),
+                Random.Range(_playerRunTimeData.PlayerRunTimeData.Vector3.y + _enemyConfigData.MinSpawnPosition.y, _playerRunTimeData.PlayerRunTimeData.Vector3.y + _enemyConfigData.MaxSpawnPosition.y),
+                Random.Range(_playerRunTimeData.PlayerRunTimeData.Vector3.z + _enemyConfigData.MinSpawnPosition.z, _playerRunTimeData.PlayerRunTimeData.Vector3.z + _enemyConfigData.MaxSpawnPosition.z));
         }
 
         private void TakeDamage(int enemyId, float damage)
@@ -87,6 +87,7 @@ namespace EnemySystem.Scripts.Entities
 
         private void ReturnEnemyToPool(int enemyId)
         {
+            _enemies[enemyId].ResetModel();
             _enemies[enemyId].KillEnemy();
             _enemies[enemyId].ReturnToPool -= ReturnEnemyToPool;
             _enemies[enemyId].TakeDamage -= TakeDamage;

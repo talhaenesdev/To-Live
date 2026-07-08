@@ -1,11 +1,10 @@
-﻿
-using Assets.Systems.PlayerControllerSystem.Scripts.Entities;
+﻿using Assets.Systems.PlayerControllerSystem.Scripts.Entities;
 using UnityEngine;
 using Zenject;
 
 namespace ShootingSystem.Scripts.Entities
 {
-    internal class AimAreaMovement : MonoBehaviour
+    internal class AreaMovement : MonoBehaviour
     {
         [Inject] private IPlayerConfig _playerData;
 
