@@ -18,8 +18,10 @@ MonoBehaviour:
     - EnemyType: 1
       Name: Mahmut
       StartHealth: 100
-      StartPosition: {x: -5.7, y: 3.1, z: 26.6}
-  _enemyId: 6
+  _minSpawnPosition: {x: -10, y: 3, z: 50}
+  _maxSpawnPosition: {x: 10, y: 3, z: 50}
+  _spawnTime: 5
+  _enemyId: 2
   _enemyType: 1
   _name: Mahmut
   _startHealth: 100

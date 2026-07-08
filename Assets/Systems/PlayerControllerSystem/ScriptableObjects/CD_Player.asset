@@ -15,4 +15,4 @@ MonoBehaviour:
   _playerData:
     Name: Rumeysa
     Health: 100
-    Speed: 20
+    Speed: 5

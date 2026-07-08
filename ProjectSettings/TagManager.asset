@@ -6,11 +6,12 @@ TagManager:
   tags:
   - CanTrigger
   - Bullet
+  - ShotArea
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - ClickArea
   - Water
   - UI
   - 

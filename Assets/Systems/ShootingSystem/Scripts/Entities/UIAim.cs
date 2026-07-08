@@ -17,13 +17,9 @@ namespace ShootingSystem.Scripts.Entities
         [SerializeField] private Transform firePoint;
 
         [SerializeField] private List<Bullet> _bullets = new List<Bullet>();
-
-
         public void OnPointerClick(PointerEventData eventData)
         {
-            //Debug.Log("Clicked at: " + eventData.position);
             Vector2 screenPos = eventData.position;
-
             Shoot(screenPos);
         }
 
@@ -31,10 +27,9 @@ namespace ShootingSystem.Scripts.Entities
         {
             Ray ray = cam.ScreenPointToRay(screenPos);
 
-            if (Physics.Raycast(ray, out RaycastHit hit))
+            if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, _bulletData.TargetLayer))
             {
                 Vector3 worldPoint = hit.point;
-
                 SpawnBullet(worldPoint);
             }
         }

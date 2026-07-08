@@ -23,3 +23,6 @@ MonoBehaviour:
     MagazineCapacity: 1
     Damage: 50
     MaxDistance: 20
+  _targetLayer:
+    serializedVersion: 2
+    m_Bits: 8

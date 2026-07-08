@@ -17,7 +17,7 @@ namespace EnemySystem.Scripts.Entities
         public Action<int,float> TakeDamage;
 
         private float _healthValue;
-        private int _setId;
+        private int _id;
 
         public void OnDespawn()
         {
@@ -50,7 +50,7 @@ namespace EnemySystem.Scripts.Entities
         }
         internal void SetId(int id)
         {
-            _setId = id;
+            _id = id;
         }
 
         internal void CreateEnemy()
@@ -79,7 +79,7 @@ namespace EnemySystem.Scripts.Entities
 
         void IDamageable.TakeDamage(float damage)
         {
-            TakeDamage?.Invoke(_setId, damage);
+            TakeDamage?.Invoke(_id, damage);
         }
     }
 }
