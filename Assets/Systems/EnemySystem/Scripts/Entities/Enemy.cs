@@ -15,9 +15,12 @@ namespace EnemySystem.Scripts.Entities
 
         public Action<int> ReturnToPool;
         public Action<int,float> TakeDamage;
+        public Action<int> Kill;
 
         private float _healthValue;
         private int _id;
+
+        public int Id => _id;
 
         public void OnDespawn()
         {
@@ -85,6 +88,11 @@ namespace EnemySystem.Scripts.Entities
         void IDamageable.TakeDamage(float damage)
         {
             TakeDamage?.Invoke(_id, damage);
+        }
+
+        public void KillThisEnemy()
+        {
+            Kill.Invoke(_id);
         }
     }
 }

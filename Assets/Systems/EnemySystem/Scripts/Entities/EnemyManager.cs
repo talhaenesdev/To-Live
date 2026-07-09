@@ -24,6 +24,7 @@ namespace EnemySystem.Scripts.Entities
         [SerializeField] private SerializableDictionary<int,Obstacle> _enemies = new SerializableDictionary<int, Obstacle>();
         #endregion
 
+        [SerializeField] private EnemyKiller _enemyKiller;
         int _enemiesCount = 0;
         private float _timer;
 
@@ -54,6 +55,7 @@ namespace EnemySystem.Scripts.Entities
             enemy.SetId(_enemiesCount);
             enemy.ReturnToPool += ReturnEnemyToPool;
             enemy.TakeDamage += TakeDamage;
+            enemy.Kill += ReturnEnemyToPool;
 
             EnemyRVO enemyRVO = new EnemyRVO()
             {
@@ -85,12 +87,14 @@ namespace EnemySystem.Scripts.Entities
             }
         }
 
+
         private void ReturnEnemyToPool(int enemyId)
         {
             _enemies[enemyId].ResetModel();
             _enemies[enemyId].KillEnemy();
             _enemies[enemyId].ReturnToPool -= ReturnEnemyToPool;
             _enemies[enemyId].TakeDamage -= TakeDamage;
+            _enemies[enemyId].Kill -= ReturnEnemyToPool;
             _poolManager.Return(_enemies[enemyId].gameObject);
             _enemies.Remove(enemyId);
             _enemyRunTimeData.EnemyRunTimeData.Remove(enemyId);
